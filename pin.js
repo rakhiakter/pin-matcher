@@ -17,6 +17,12 @@ for (var i = 0; i < button.length; i++) {
     })
    
   }
+  else if(button[i].id ==="<") {
+    button[i].addEventListener('click', function(){
+      userPin =userPin.substring(0,userPin.length-1);
+      displayArea.value = userPin;
+    })
+  }
   else {
     button[i].addEventListener('click', function () {
       console.log(this.id);
@@ -26,7 +32,11 @@ for (var i = 0; i < button.length; i++) {
 
     })
   }
+ 
 
 }
-
+var submitArea = document.getElementById("submit-button");
+submitArea.addEventListener('click', function(){
+  console.log(done);
+})
 
