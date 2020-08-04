@@ -40,13 +40,17 @@ var submitArea = document.querySelector(".submit-btn");
 submitArea.addEventListener('click', function () {
   console.log("done");
   let fourDigitRandom = document.getElementsByClassName("form-control")[0].value;
-  if (fourDigitRandom == userPin) {
+  userPin = document.getElementsByClassName("form-control")[1].value;
+  if (fourDigitRandom == userPin
+    && fourDigitRandom != ''
+    ) {
     let pinMatched = notifySection[1];
     pinMatched.style.display = "block";
   }
   else {
-    let tryAgain =notifySection[0];
+    let tryAgain = notifySection[0];
     tryAgain.style.display = "block";
   }
 })
+
 
