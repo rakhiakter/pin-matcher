@@ -1,6 +1,6 @@
-const notifySection = document.getElementsByClassName("notify-section");
+let notifySection = document.getElementsByClassName("notify");
 notifySection[0].style.display = "none";
-
+notifySection[1].style.display = "none";
 document.querySelector('.generate-btn').addEventListener('click', function () {
   var fourDigitRandom = Math.floor(1000 + Math.random() * 9000);
   document.getElementsByClassName("form-control")[0].value = fourDigitRandom;
@@ -39,13 +39,13 @@ for (var i = 0; i < button.length; i++) {
 var submitArea = document.querySelector(".submit-btn");
 submitArea.addEventListener('click', function () {
   console.log("done");
-  let fourDigitRandom =  document.getElementsByClassName("form-control")[0].value;
+  let fourDigitRandom = document.getElementsByClassName("form-control")[0].value;
   if (fourDigitRandom == userPin) {
-    let pinMatched = document.getElementsByClassName('notify');
+    let pinMatched = notifySection[1];
     pinMatched.style.display = "block";
   }
   else {
-    let tryAgain = document.getElementsByClassName('notify');
+    let tryAgain =notifySection[0];
     tryAgain.style.display = "block";
   }
 })
